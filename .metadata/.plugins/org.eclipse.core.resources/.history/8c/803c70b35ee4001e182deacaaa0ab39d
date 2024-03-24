@@ -1,0 +1,53 @@
+package com.sathya.springex;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/acceptorders")
+public class OrderController {
+    @Autowired
+    private OrderManager orderManager;
+    
+    @GetMapping("/addItemForm")
+    public String showAddItemForm(@RequestParam("orderNumber") String orderNumber, Model model) {
+        model.addAttribute("orderNumber", orderNumber);
+        return "addItem";
+    }
+
+
+    @PostMapping("/add")
+    public void addOrder(@RequestParam String orderId, @RequestParam List<String> items) {
+        orderManager.addOrder(orderId, items);
+    }
+
+    @GetMapping("/getItems/{orderId}")
+    public List<String> getItemsForOrder(@PathVariable String orderId) {
+        return orderManager.getItemsForOrder(orderId);
+    }
+
+    @GetMapping("/getAll")
+    public Map<String, List<String>> getAllOrders() {
+        return orderManager.getAllOrders();
+    }
+
+    @DeleteMapping("/remove/{orderId}")
+    public void removeOrder(@PathVariable String orderId) {
+        orderManager.removeOrder(orderId);
+    }
+
+    @DeleteMapping("/removeAllItems/{orderId}")
+    public void removeAllItemsFromOrder(@PathVariable String orderId) {
+        orderManager.removeAllItemsFromOrder(orderId);
+    }
+
+    @PutMapping("/addItems/{orderId}")
+    public void addItemsToOrder(@PathVariable String orderId, @RequestParam List<String> items) {
+        orderManager.addItemsToOrder(orderId, items);
+    }
+}
+

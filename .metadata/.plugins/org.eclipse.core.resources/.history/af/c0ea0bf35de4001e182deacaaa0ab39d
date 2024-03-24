@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order Details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <h1>Order Details</h1>
+    <p th:text="'Order Number: ' + ${orderNumber}"></p>
+    <p th:text="'Items: ' + ${items}"></p>
+    
+    <form action="/removeItem" method="post">
+        <input type="hidden" name="orderNumber" th:value="${orderNumber}" />
+        <input type="submit" value="Remove Item" />
+    </form>
+    
+    <form action="/addOdder" method="post">
+        <input type="hidden" name="orderNumber" th:value="${orderNumber}" />
+        <input type="submit" value="Add Item" />
+    </form>
+    
+    <form action="/cancelOrder" method="post">
+        <input type="hidden" name="orderNumber" th:value="${orderNumber}" />
+        <input type="submit" value="Cancel Order" />
+    </form>
+    
+    <form action="/completeOrder" method="post">
+        <input type="hidden" name="orderNumber" th:value="${orderNumber}" />
+        <input type="submit" value="Complete Order" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+package com.sathya.springex;
+
+public class Pharmacy {
+      String pharmaLocation;
+
+	public Pharmacy(String pharmaLocation) {
+		super();
+		this.pharmaLocation = pharmaLocation;
+	}
+      
+      public void pharmaInfo(String pharmaLocation) {
+    	  System.out.println("Pharmacy Location At:"+pharmaLocation);
+      }
+}

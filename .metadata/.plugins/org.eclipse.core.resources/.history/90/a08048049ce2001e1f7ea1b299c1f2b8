@@ -1,0 +1,11 @@
+package com.sathya.springex;
+
+public class JavaCourse implements CourseService {
+
+	@Override
+	public void course() {
+		System.out.println("Student joined java Course");
+		
+	}
+
+}

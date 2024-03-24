@@ -1,0 +1,42 @@
+package com.sathya.springex;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Person {
+         homeLoanService homeLoanService;
+         realEstateService realEstateService;
+         
+         
+		public Person(homeLoanService homeLoanService, realEstateService realEstateService) {
+			super();
+			this.homeLoanService = homeLoanService;
+			this.realEstateService = realEstateService;
+		}
+
+
+		public HomeLoanService getHomeLoanService() {
+			return homeLoanService;
+		}
+
+        @Autowired
+		public void setHomeLoanService(HomeLoanService homeLoanService) {
+			this.homeLoanService = homeLoanService;
+		}
+
+
+		public RealEstateService getRealEstateService() {
+			return realEstateService;
+		}
+
+        @Autowired
+		public void setRealEstateService(RealEstateService realEstateService) {
+			this.realEstateService = realEstateService;
+		}
+         
+        public void personInfo() {
+        	System.out.println();
+        	System.out.println(getRealEstateService());
+        }
+}

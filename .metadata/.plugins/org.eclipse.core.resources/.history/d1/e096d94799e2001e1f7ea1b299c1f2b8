@@ -1,0 +1,11 @@
+package com.sathya.springex;
+
+public class EmailMessage implements EmailService {
+
+	@Override
+	public void message() {
+		// TODO Auto-generated method stub
+		
+	}
+    
+}

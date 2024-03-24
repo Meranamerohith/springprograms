@@ -1,0 +1,27 @@
+package com.sathya.springex;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class JavaConfig {
+      
+	@Bean
+	DoctorService doctorService() {
+		DoctorService doctorService = new DoctorService(0, null);
+		return doctorService;
+	}
+	
+	@Bean 
+	PharmacyService pharmacyService() {
+		PharmacyService pharmacyService = new PharmacyService(null);
+		return pharmacyService;
+	}
+	
+	@Bean
+	Patient patient() {
+		Patient patient = new Patient(null, 0, null, null);
+		return patient;
+	}
+	    
+}

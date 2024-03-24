@@ -1,0 +1,23 @@
+package com.sathya.springex;
+
+import org.springframework.stereotype.Component;
+
+public class Student {
+	
+	EmailMessage emailMessage;
+	JavaCourse   javacourse;
+	
+
+	public Student(EmailMessage emailMessage, JavaCourse javacourse) {
+		super();
+		this.emailMessage = emailMessage;
+		this.javacourse = javacourse;
+	}
+
+
+	public void details() {
+		emailMessage.message();
+		javacourse.course();
+	}
+
+}

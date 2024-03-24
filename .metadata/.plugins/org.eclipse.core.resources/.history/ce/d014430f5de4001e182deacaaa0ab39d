@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Number Generator</title>
+    <script>
+        function generateOrderNumber() {
+            fetch('/generateOrder', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(orderNumber => {
+                document.getElementById('orderNumber').innerText = orderNumber;
+            })
+            .catch(error => {
+                console.error('Error generating order number:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Order Number Generator</h1>
+    <p>Click the button below to generate a new order number:</p>
+    <button onclick="generateOrderNumber()">Generate Order Number</button>
+    <p>Generated Order Number: <span id="orderNumber"></span></p>
+</body>
+</html>

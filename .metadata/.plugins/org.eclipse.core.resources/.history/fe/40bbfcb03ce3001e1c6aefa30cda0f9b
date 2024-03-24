@@ -1,0 +1,40 @@
+package com.sathya.springex;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+@Component
+public class Student {
+	
+	
+	private EmailMessage emailMessage;
+	private JavaCourse javacourse;
+	
+	
+	
+   
+	
+
+
+
+   @Autowired
+	public Student(EmailMessage emailMessage, JavaCourse javacourse) {
+		super();
+		this.emailMessage = emailMessage;
+		this.javacourse = javacourse;
+	}
+
+
+
+
+
+
+
+
+
+	public void details() {
+		emailMessage.message();
+		javacourse.course();
+	}
+
+
+}

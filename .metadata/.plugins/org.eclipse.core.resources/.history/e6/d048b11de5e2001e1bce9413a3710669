@@ -1,0 +1,30 @@
+package com.sathya.springex;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+@Configuration
+public class JavaConfig {
+	
+	@Bean
+	public Person person1() 
+	{
+		Person person = new Person("vinay","tomar23@gmail.com");
+	    return person;
+	}
+	
+	@Bean 
+	public Person person2() {
+		Person person = new Person("bipin", "bipinjj@gmail.com");
+		return person;
+	}
+	
+	@Bean 
+	public Person person3() {
+		Person person = new Person("chintu","Chintu11@gmail.com");
+		return person;
+	}
+	
+	
+}

@@ -1,0 +1,45 @@
+package com.sathya.springex;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/orders")
+public class OrderController {
+    @Autowired
+    private OrderManager orderManager;
+
+    @PostMapping("/add")
+    public void addOrder(@RequestParam String orderId, @RequestParam List<String> items) {
+        orderManager.addOrder(orderId, items);
+    }
+
+    @GetMapping("/getItems/{orderId}")
+    public List<String> getItemsForOrder(@PathVariable String orderId) {
+        return orderManager.getItemsForOrder(orderId);
+    }
+
+    @GetMapping("/getAll")
+    public Map<String, List<String>> getAllOrders() {
+        return orderManager.getAllOrders();
+    }
+
+    @DeleteMapping("/remove/{orderId}")
+    public void removeOrder(@PathVariable String orderId) {
+        orderManager.removeOrder(orderId);
+    }
+
+    @DeleteMapping("/removeAllItems/{orderId}")
+    public void removeAllItemsFromOrder(@PathVariable String orderId) {
+        orderManager.removeAllItemsFromOrder(orderId);
+    }
+
+    @PutMapping("/addItems/{orderId}")
+    public void addItemsToOrder(@PathVariable String orderId, @RequestParam List<String> items) {
+        orderManager.addItemsToOrder(orderId, items);
+    }
+}
+

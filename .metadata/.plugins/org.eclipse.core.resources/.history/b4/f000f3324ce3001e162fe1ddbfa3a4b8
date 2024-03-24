@@ -1,0 +1,17 @@
+package com.sathya.springex;
+
+public class Student {
+	
+	
+	private EmailMessage emailMessage;
+	private JavaCourse javacourse;
+	
+	
+
+	public void details() {
+		emailMessage.message();
+		javacourse.course();
+	}
+
+
+}

@@ -1,0 +1,8 @@
+package com.sathya.springex;
+
+public class HomeLoanService {
+	public void LoanInfo() {
+		System.out.println("ICIC Bank at interest rate of 7.25%");
+	}
+
+}

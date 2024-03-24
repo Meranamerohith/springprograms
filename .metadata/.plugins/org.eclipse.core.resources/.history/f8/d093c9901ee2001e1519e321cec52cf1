@@ -1,0 +1,6 @@
+package com.sathya.springex;
+
+public class Person {
+     String name;
+     String email;
+}

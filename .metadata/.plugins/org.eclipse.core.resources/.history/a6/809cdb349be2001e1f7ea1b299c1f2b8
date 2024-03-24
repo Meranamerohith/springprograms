@@ -1,0 +1,12 @@
+package com.sathya.springex;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+@Configuration
+public class JavaConfig {
+         
+	
+     @Component
+     Student(emailMessage.message(),javacourse.course());
+}
